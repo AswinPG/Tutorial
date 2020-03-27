@@ -10,7 +10,12 @@ namespace TuitionApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Home.HomePage())
+            {
+                BarBackgroundColor = Color.FromHex("#ffffff"),
+                BarTextColor = Color.FromHex("#6518E7")
+            };
+
         }
 
         protected override void OnStart()
