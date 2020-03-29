@@ -41,8 +41,8 @@
                 x:Name="StartThreadFrame"
                 Margin="0"
                 Padding="40,20,40,20"
-                CornerRadius="4"
-                BackgroundColor="#FAFAFA"
+                CornerRadius="0"
+                BackgroundColor="#ffffff"
                 HasShadow="False">
                 <Label Text="Ask a doubt" FontSize="12">
                     <Label.FontFamily>

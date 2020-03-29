@@ -29,5 +29,9 @@ namespace TuitionApp.Subject
         {
             Navigation.PushAsync(new StudyNotes.StudyNotesPage());
         }
+        private void Forum_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Forum.ForumPage());
+        }
     }
 }

@@ -132,55 +132,64 @@
 
                 
             </Frame>
-            <Frame HasShadow="False" Margin="0,5,0,0" Padding="15,15,15,15">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image HeightRequest="30"
-                                           WidthRequest="30" 
+            <ListView x:Name="CommentsListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="False" Margin="0,5,0,0" Padding="15,15,15,15">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image HeightRequest="25"
+                                           WidthRequest="25" 
                                            Grid.Row="0"
                                            Grid.Column="0"
                                Margin="5,0,0,0"
                                            VerticalOptions="Center"
-                                           Source="alarmclock.png"/>
-                    <Label Grid.Row="0"
+                                           Source="{Binding Avatar}"/>
+                                    <Label Grid.Row="0"
                                            Grid.Column="1"
                                            FontSize="10"
                                            TextColor="#A4A4A4"
                                            VerticalOptions="Center"
-                                           Text="Avinash" 
+                                           Text="{Binding Author}" 
                                            Margin="6,0,0,0">
 
-                    </Label>
-                    <Label Grid.Row="0"
+                                    </Label>
+                                    <Label Grid.Row="0"
                                            Grid.Column="2"
                                            FontSize="7"
                                            VerticalOptions="Center"
                                            TextColor="#A4A4A4"
-                                           Text="19h" >
-                       
+                                           Text="{Binding Date}" >
 
-                    </Label>
-                    
-                    <Frame Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="#ffffff" Padding="0" HasShadow="False" CornerRadius="7.5">
-                        <Label  FontSize="14.3"
+
+                                    </Label>
+
+                                    <Frame Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="#ffffff" Padding="0" HasShadow="False" CornerRadius="7.5">
+                                        <Label  FontSize="14.3"
                                     VerticalOptions="Center"
                                     TextColor="#8B8B8B"
                                     LineHeight="1.1"
-                                    Text="Y'all said that casual players shouldn't get awarded. Y'all said ToO was to place for casual players. Y'all said that its's meant for the top players. Well, now we're all leaving." >
-                       
+                                    Text="{Binding ReplyComment}" >
 
-                        </Label>
-                    </Frame>
-                </Grid>
-            </Frame>
+
+                                        </Label>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
 
         </StackLayout>
     </ContentPage.Content>

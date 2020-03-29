@@ -74,7 +74,11 @@
 
                     <ffSvg:SvgCachedImage Source="quiz.svg" Margin="0,10,0,0"/>
                     <ffSvg:SvgCachedImage Source="prev.svg" Margin="0,10,0,0"/>
-                    <ffSvg:SvgCachedImage Source="forum.svg" Margin="0,10,0,0"/>
+                <ffSvg:SvgCachedImage Source="forum.svg" Margin="0,10,0,0">
+                    <ffSvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Forum_Tapped" />
+                    </ffSvg:SvgCachedImage.GestureRecognizers>
+                </ffSvg:SvgCachedImage>
 
                 </StackLayout>
 

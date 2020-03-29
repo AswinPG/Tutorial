@@ -9,29 +9,18 @@
              BackgroundColor="White"
              x:Class="TuitionApp.Notifications.NotificationPage">
     <NavigationPage.TitleView>
-        <Grid Margin="0,15,15,15">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
-                                      Source="backGrad1.svg" Margin="0,0,15,0"
-                                      >
-                <ffSvg:SvgCachedImage.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back" />
-                </ffSvg:SvgCachedImage.GestureRecognizers>
-            </ffSvg:SvgCachedImage>
+        <Grid Margin="15">
             <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
-                                      Source="logo.svg" Grid.Column="1"
+                                      Source="logo.svg" Grid.Column="0"
                                       />
             <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
-                                      Source="noti_close.svg" Grid.Column="2"
+                                      Source="noti_close.svg" Grid.Column="1"
                                       >
                 <ffSvg:SvgCachedImage.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification_Back" />
                 </ffSvg:SvgCachedImage.GestureRecognizers>
             </ffSvg:SvgCachedImage>
+
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
