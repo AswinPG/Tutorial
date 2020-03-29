@@ -9,12 +9,24 @@
              BackgroundColor="White"
              x:Class="TuitionApp.StudyNotes.StudyNotesPage">
     <NavigationPage.TitleView>
-        <Grid Margin="15">
+        <Grid Margin="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification_Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
             <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
-                                      Source="logo.svg" Grid.Column="0"
+                                      Source="logo.svg" Grid.Column="1"
                                       />
             <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
-                                      Source="noti.svg" Grid.Column="1"
+                                      Source="noti.svg" Grid.Column="2"
                                       >
                 <ffSvg:SvgCachedImage.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
@@ -23,63 +35,142 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
 
-            <ffSvg:SvgCachedImage HeightRequest="40" HorizontalOptions="Start"
-                                      Source="backGrad1.svg" Margin="20,20,20,0"
-                                      >
-                <ffSvg:SvgCachedImage.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification_Back" />
-                </ffSvg:SvgCachedImage.GestureRecognizers>
-            </ffSvg:SvgCachedImage>
-            <StackLayout Margin="25,15,25,0">
+            <StackLayout>
 
-                <BoxView HeightRequest="1" BackgroundColor="#efefef"></BoxView>
-                <Frame HasShadow="False" CornerRadius="10" Padding="0,5,0,5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <ffSvg:SvgCachedImage HeightRequest="35" Source="pdfFile.svg" Margin="0,0,10,0"
-                                          Grid.Column="0" Grid.Row="0"/>
-                        <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0" >
-                            <Label Text="Chapter 1" FontSize="18" HorizontalOptions="Start" VerticalOptions="End" Margin="0,3,0,0"></Label>
-                            <Label Text="Today" FontSize="15" HorizontalOptions="Start" VerticalOptions="Start"></Label>
-                        </StackLayout>
-                    </Grid>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Note_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                    </Frame.GestureRecognizers>
-                </Frame>
+                
+                <CollectionView x:Name="MainListView" Margin="20,20,20,0" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout VerticalOptions="StartAndExpand">
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                                FontAttributes="Bold"
+                            Text="{Binding ChapterNo}"
+                            TextColor="#6518E7">
 
-                <BoxView HeightRequest="1" BackgroundColor="#efefef"></BoxView>
-                <Frame HasShadow="False" CornerRadius="10" Padding="0,5,0,5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <ffSvg:SvgCachedImage HeightRequest="35" Source="pdfFile.svg" Margin="0,0,10,0"
-                                          Grid.Column="0" Grid.Row="0"/>
-                        <StackLayout Orientation="Vertical" Grid.Column="1" Grid.Row="0" >
-                            <Label Text="Chapter 2" FontSize="18" HorizontalOptions="Start" VerticalOptions="End" Margin="0,3,0,0"></Label>
-                            <Label Text="Today" FontSize="15" HorizontalOptions="Start" VerticalOptions="Start"></Label>
-                        </StackLayout>
-                    </Grid>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="Note_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
-                    </Frame.GestureRecognizers>
-                </Frame>
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="22"
+                            LineHeight="1.1"
+                            Text="{Binding Heading}"
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                            LineHeight="1.15"
+                            Text="{Binding Para}"
+                            TextColor="#000000">
+
+                                </Label>
+
+                                <Image Source="{Binding ImageSource}"></Image>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                        
+
             </StackLayout>
+<!--
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <AbsoluteLayout Padding="0" Grid.Row="0">
+                
+                <Frame
+                x:Name="MidFrame"
+                AbsoluteLayout.LayoutBounds="0,.978,1,.01"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand" />
+                <Frame
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label
+                        Margin="0"
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        LineHeight="1.1"
+                        Text="Loading.."
+                        TextColor="#fzfzfz">
 
-        </StackLayout>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame
+                x:Name="MainFrame"
+                Padding="0"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="NextPage" />
+                    </Frame.GestureRecognizers>
+                    <ScrollView>
+                        <StackLayout>
+                            <Frame Padding="0" BackgroundColor="Transparent">
+                                <Image Source="Pic.png" />
+                            </Frame>
+
+                            <StackLayout Margin="15,15,15,0" VerticalOptions="StartAndExpand">
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                                FontAttributes="Bold"
+                            Text="Chapter 1"
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="22"
+                            LineHeight="1.1"
+                            Text="Indian space program closes out year with launch of upgraded GSLV"
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                            LineHeight="1.15"
+                            Text="GSLV-F11 successfully launched GSAT-7A, ISRO's 39th communication satellite, on December 19, 2018 at 1610 hrs (IST) from the Second Launch Pad (SLP) of Satish Dhawan Space Centre SHAR, Sriharikota. "
+                            TextColor="#000000">
+
+                                </Label>
+                               
+                            <Image></Image>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                    
+                </Frame>
+
+            </AbsoluteLayout>
+            
+            <Button Grid.Row="1"
+                        Margin="15"
+                    CornerRadius="25"
+                        BackgroundColor="#3300ff"
+                        Text="Next"
+                    TextColor="White"
+                        VerticalOptions="EndAndExpand" 
+                        Clicked="NextPage">
+
+            </Button>
+        </Grid>
         
+        -->
     </ContentPage.Content>
 </ContentPage>

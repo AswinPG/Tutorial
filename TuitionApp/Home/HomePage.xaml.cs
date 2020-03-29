@@ -28,6 +28,10 @@ namespace TuitionApp.Home
         {
             Navigation.PushAsync(new Notifications.NotificationPage());
         }
+        private void Forum_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Forum.ForumPage());
+        }
 
     }
 }

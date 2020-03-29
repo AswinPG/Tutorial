@@ -33,6 +33,10 @@ namespace TuitionApp.CurrentAffairs
         {
             Navigation.PushAsync(new Notifications.NotificationPage());
         }
+        private void Back(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
 
     }
 }

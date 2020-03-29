@@ -7,24 +7,22 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TuitionApp.Notifications
+namespace TuitionApp.Forum
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NotificationPage : ContentPage
+    public partial class ReplyPage : ContentPage
     {
-        public NotificationPage()
+        public ReplyPage()
         {
             InitializeComponent();
         }
-        private void Notification_Back(object sender, EventArgs e)
+        private void Notification(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            Navigation.PushAsync(new Notifications.NotificationPage());
         }
         private void Back(object sender, EventArgs e)
         {
             Navigation.PopAsync();
         }
-
-
     }
 }

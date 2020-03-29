@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="#efefef"
+             NavigationPage.HasBackButton="False"
+             x:Class="TuitionApp.Forum.ReplyPage">
+    <NavigationPage.TitleView >
+        <Grid Padding="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="White" Margin="0,0,0,0" Padding="15,15,10,15" HasShadow="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <!--<RowDefinition Height="Auto"></RowDefinition>-->
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="30"
+                                           WidthRequest="30" 
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           Source="alarmclock.png"/>
+                    <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="12"
+                                           TextColor="#A4A4A4"
+                                           VerticalOptions="Center"
+                                           Text="DestinyTheGame" 
+                                           Margin="10,0,0,0">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+                    <Label Grid.Row="0"
+                                           Grid.Column="2"
+                                           FontSize="8.5"
+                                           VerticalOptions="Center"
+                                           TextColor="#A4A4A4"
+                                       Margin="0,0,5,0"
+                                           Text="19h" >
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+
+                    <Label Grid.Row="1"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="16"
+                                           TextColor="#282828"
+                                           Margin="0,13,0,0"
+                                           Text="There's nothing better to me than streamers whining" >
+
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+
+                    <!--
+                                <ffSvg:SvgCachedImage 
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                        Source="star.svg"
+                                        Margin="0,12,0,0"
+                                        HeightRequest="20"
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center">
+
+                                </ffSvg:SvgCachedImage>
+                                -->
+
+                    <Label Grid.Row="2"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="13"
+                                           TextColor="#8B8B8B" LineHeight="1.1"
+                                           Text="Y'all said that casual players shouldn't get awarded. Y'all said ToO was to place for casual players. Y'all said that its's meant for the top players. Well, now we're all leaving." 
+                                           Margin="0,0,0,0">
+
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+
+
+                    <!--<BoxView HeightRequest="1" VerticalOptions="End" Color="#E3E3E5" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>-->
+                </Grid>
+
+                
+            </Frame>
+            <Frame HasShadow="False" Margin="0,5,0,0" Padding="15,15,15,15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image HeightRequest="30"
+                                           WidthRequest="30" 
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                               Margin="5,0,0,0"
+                                           VerticalOptions="Center"
+                                           Source="alarmclock.png"/>
+                    <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="10"
+                                           TextColor="#A4A4A4"
+                                           VerticalOptions="Center"
+                                           Text="Avinash" 
+                                           Margin="6,0,0,0">
+
+                    </Label>
+                    <Label Grid.Row="0"
+                                           Grid.Column="2"
+                                           FontSize="7"
+                                           VerticalOptions="Center"
+                                           TextColor="#A4A4A4"
+                                           Text="19h" >
+                       
+
+                    </Label>
+                    
+                    <Frame Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="#ffffff" Padding="0" HasShadow="False" CornerRadius="7.5">
+                        <Label  FontSize="14.3"
+                                    VerticalOptions="Center"
+                                    TextColor="#8B8B8B"
+                                    LineHeight="1.1"
+                                    Text="Y'all said that casual players shouldn't get awarded. Y'all said ToO was to place for casual players. Y'all said that its's meant for the top players. Well, now we're all leaving." >
+                       
+
+                        </Label>
+                    </Frame>
+                </Grid>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
