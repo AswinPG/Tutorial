@@ -35,7 +35,6 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-
             <StackLayout>
 
                 
@@ -77,7 +76,8 @@
                         
 
             </StackLayout>
-<!--
+
+        <!--
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
@@ -126,26 +126,29 @@
 
                             <StackLayout Margin="15,15,15,0" VerticalOptions="StartAndExpand">
                                 <Label
+                                    x:Name="Chapter"
                             Margin="0"
                             FontSize="16"
                                 FontAttributes="Bold"
-                            Text="Chapter 1"
+                            Text=""
                             TextColor="#6518E7">
 
                                 </Label>
                                 <Label
+                                    x:Name="Heading"
                             Margin="0"
                             FontSize="22"
                             LineHeight="1.1"
-                            Text="Indian space program closes out year with launch of upgraded GSLV"
+                            Text=""
                             TextColor="#6518E7">
 
                                 </Label>
                                 <Label
+                                    x:Name="Para"
                             Margin="0"
                             FontSize="16"
                             LineHeight="1.15"
-                            Text="GSLV-F11 successfully launched GSAT-7A, ISRO's 39th communication satellite, on December 19, 2018 at 1610 hrs (IST) from the Second Launch Pad (SLP) of Satish Dhawan Space Centre SHAR, Sriharikota. "
+                            Text=""
                             TextColor="#000000">
 
                                 </Label>
@@ -169,8 +172,7 @@
                         Clicked="NextPage">
 
             </Button>
-        </Grid>
+        </Grid>-->
         
-        -->
     </ContentPage.Content>
 </ContentPage>
