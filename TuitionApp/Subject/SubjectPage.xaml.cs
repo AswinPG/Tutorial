@@ -33,5 +33,10 @@ namespace TuitionApp.Subject
         {
             Navigation.PushAsync(new Forum.ForumPage());
         }
+
+        private void Quiz_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Quiz.QuizPage());
+        }
     }
 }

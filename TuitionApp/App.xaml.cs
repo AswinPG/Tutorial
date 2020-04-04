@@ -10,7 +10,7 @@ namespace TuitionApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Home.HomePage())
+            MainPage = new NavigationPage(new Quiz.QuizPage())
             {
                 BarBackgroundColor = Color.FromHex("#ffffff"),
                 BarTextColor = Color.FromHex("#6518E7")

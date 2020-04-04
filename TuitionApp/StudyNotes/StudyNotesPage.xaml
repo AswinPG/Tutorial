@@ -41,7 +41,7 @@
                 <CollectionView x:Name="MainListView" Margin="20,20,20,0" >
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout VerticalOptions="StartAndExpand">
+                            <StackLayout VerticalOptions="StartAndExpand" x:Name="aaa">
                                 <Label
                             Margin="0"
                             FontSize="16"

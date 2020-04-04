@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="False"
+             x:Class="TuitionApp.Quiz.QuizPage">
+    <NavigationPage.TitleView>
+        <Grid Margin="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
+                                      Source="logo.svg" Grid.Column="1"
+                                      />
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
+                                      Source="noti.svg" Grid.Column="2"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <CollectionView x:Name="QuizList" Grid.Row="0" Margin="15,20,15,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BackgroundColor="White" CornerRadius="10" HasShadow="False" Margin="0" BorderColor="#efefef">
+                                <Label Text="{Binding Question}" x:Name="Que"></Label>
+                            </Frame>
+                            <Frame BackgroundColor="White" CornerRadius="10" Margin="0,0,0,10" HasShadow="False" Padding="0" >
+                                <StackLayout Orientation="Vertical">
+                                    <Button CharacterSpacing="2" Text="{Binding Option1}" BackgroundColor="White" x:Name="Opt1" BorderColor="#efefef" BorderWidth="1" Clicked="Opt1_Clicked"></Button>
+                                    <Button CharacterSpacing="2" Text="{Binding Option2}" BackgroundColor="White" x:Name="Opt2" BorderColor="#efefef" BorderWidth="1" Clicked="Opt2_Clicked"></Button>
+                                    <Button CharacterSpacing="2" Text="{Binding Option3}" BackgroundColor="White" x:Name="Opt3" BorderColor="#efefef" BorderWidth="1" Clicked="Opt3_Clicked"></Button>
+                                    <Button CharacterSpacing="2" Text="{Binding Option4}" BackgroundColor="White" x:Name="Opt4" BorderColor="#efefef" BorderWidth="1" Clicked="Opt4_Clicked"></Button>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Grid.Row="1"
+                        Margin="0"
+                    CornerRadius="0"
+                        BackgroundColor="#3300ff"
+                        Text="Finish Quiz"
+                    CharacterSpacing="2"
+                    TextColor="White"
+                        VerticalOptions="EndAndExpand" 
+                        Clicked="Finish">
+
+            </Button>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
