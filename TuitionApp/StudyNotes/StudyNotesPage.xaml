@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
+             x:Class="TuitionApp.StudyNotes.StudyNotesPage">
+    <NavigationPage.TitleView>
+        <Grid Margin="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification_Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
+                                      Source="logo.svg" Grid.Column="1"
+                                      />
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
+                                      Source="noti.svg" Grid.Column="2"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+            <StackLayout>
+
+                
+                <CollectionView x:Name="MainListView" Margin="20,20,20,0" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout VerticalOptions="StartAndExpand" x:Name="aaa">
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                                FontAttributes="Bold"
+                            Text="{Binding ChapterNo}"
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="22"
+                            LineHeight="1.1"
+                            Text="{Binding Heading}"
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                            Margin="0"
+                            FontSize="16"
+                            LineHeight="1.15"
+                            Text="{Binding Para}"
+                            TextColor="#000000">
+
+                                </Label>
+
+                                <Image Source="{Binding ImageSource}"></Image>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                        
+
+            </StackLayout>
+
+        <!--
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <AbsoluteLayout Padding="0" Grid.Row="0">
+                
+                <Frame
+                x:Name="MidFrame"
+                AbsoluteLayout.LayoutBounds="0,.978,1,.01"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand" />
+                <Frame
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label
+                        Margin="0"
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        LineHeight="1.1"
+                        Text="Loading.."
+                        TextColor="#fzfzfz">
+
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Frame
+                x:Name="MainFrame"
+                Padding="0"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                    <Frame.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="NextPage" />
+                    </Frame.GestureRecognizers>
+                    <ScrollView>
+                        <StackLayout>
+                            <Frame Padding="0" BackgroundColor="Transparent">
+                                <Image Source="Pic.png" />
+                            </Frame>
+
+                            <StackLayout Margin="15,15,15,0" VerticalOptions="StartAndExpand">
+                                <Label
+                                    x:Name="Chapter"
+                            Margin="0"
+                            FontSize="16"
+                                FontAttributes="Bold"
+                            Text=""
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                                    x:Name="Heading"
+                            Margin="0"
+                            FontSize="22"
+                            LineHeight="1.1"
+                            Text=""
+                            TextColor="#6518E7">
+
+                                </Label>
+                                <Label
+                                    x:Name="Para"
+                            Margin="0"
+                            FontSize="16"
+                            LineHeight="1.15"
+                            Text=""
+                            TextColor="#000000">
+
+                                </Label>
+                               
+                            <Image></Image>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                    
+                </Frame>
+
+            </AbsoluteLayout>
+            
+            <Button Grid.Row="1"
+                        Margin="15"
+                    CornerRadius="25"
+                        BackgroundColor="#3300ff"
+                        Text="Next"
+                    TextColor="White"
+                        VerticalOptions="EndAndExpand" 
+                        Clicked="NextPage">
+
+            </Button>
+        </Grid>-->
+        
+    </ContentPage.Content>
+</ContentPage>

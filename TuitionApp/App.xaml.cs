@@ -1,5 +1,4 @@
 ﻿using System;
-using TuitionApp.Authentication.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +10,12 @@ namespace TuitionApp
         {
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new Quiz.QuizPage())
+            {
+                BarBackgroundColor = Color.FromHex("#ffffff"),
+                BarTextColor = Color.FromHex("#6518E7")
+            };
+
         }
 
         protected override void OnStart()

@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="#efefef"
+             NavigationPage.HasBackButton="False"
+             x:Class="TuitionApp.Forum.ForumPage">
+    <NavigationPage.TitleView>
+        <Grid Margin="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
+                                      Source="logo.svg" Grid.Column="1"
+                                      />
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
+                                      Source="noti.svg" Grid.Column="2"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Frame
+                
+                x:Name="StartThreadFrame"
+                Margin="0"
+                Padding="40,20,40,20"
+                CornerRadius="0"
+                BackgroundColor="#ffffff"
+                HasShadow="False">
+                <Label Text="Ask a doubt" FontSize="12">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />-->
+                            <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="StartThreadFrameTapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <StackLayout
+                x:Name="AddForumContainer"
+                Padding="20"
+                IsVisible="False">
+
+                <Entry  FontSize="12"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="Heading Goes Here..."
+                        TextColor="Black" >
+                    <Entry.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />-->
+                            <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                        </OnPlatform>
+                    </Entry.FontFamily>
+                </Entry>
+
+                <Editor FontSize="12"
+                        HeightRequest="200"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="What's on your mind ?" >
+                    <Editor.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                            <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                        </OnPlatform>
+                    </Editor.FontFamily>
+                </Editor>
+
+
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ffSvg:SvgCachedImage 
+                                            Grid.Column="0"
+                                            Source="chatIcon.svg"
+                                            HeightRequest="22"
+                                            VerticalOptions="Center">
+
+                    </ffSvg:SvgCachedImage>
+                    <Label Grid.Column="1"
+                                               Margin="0,0,0,0"
+                                               VerticalOptions="Start"
+                                               FontSize="14"
+                                               TextColor="#8B8B8B"
+                                               Text="Attach.." >
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+                    <Label Grid.Column="2"
+                                               Margin="0,0,0,0"
+                                               VerticalOptions="Start"
+                                               FontSize="12"
+                                               TextColor="#8B8B8B"
+                                               Text="Delete" >
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+                </Grid>
+
+                <Button Text="Post"
+                        Margin="0,35,0,0"
+                        BorderWidth="0.5"
+                        BorderColor="#009CFF"
+                        BackgroundColor="Transparent"
+                        CornerRadius="5"
+                        FontSize="12"
+                        TextColor="#009CFF">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                            <On Platform="Android" Value="Heebo-Bold.ttf#Heebo-Bold" />-->
+                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+
+                <!--<Button Text="Cancel"
+                        BorderWidth="0.5"
+                        Margin="0,10,0,10"
+                        BackgroundColor="Transparent"
+                        CornerRadius="5"
+                        FontSize="12"
+                        BorderColor="#ff0000"
+                        TextColor="#ff0000"
+                        Clicked="SubmitClicked">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            -->
+                <!--<On Platform="iOS" Value="MarkerFelt-Thin" />-->
+                <!--
+                            <On Platform="Android" Value="Heebo-Bold.ttf#Heebo-Bold" />
+                            -->
+                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                <!--
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>-->
+
+            </StackLayout>
+            <ListView x:Name="Stack1" SeparatorVisibility="None"
+                
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"> 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <Frame BackgroundColor="White" Margin="0,0,0,7" Padding="15,15,10,15" HasShadow="True">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <!--<RowDefinition Height="Auto"></RowDefinition>-->
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image HeightRequest="30"
+                                           WidthRequest="30" 
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           Source="{Binding Avatar}"/>
+                                <Label Grid.Row="0"
+                                           Grid.Column="1"
+                                           FontSize="12"
+                                           TextColor="#A4A4A4"
+                                           VerticalOptions="Center"
+                                           Text="{Binding Author}" 
+                                           Margin="10,0,0,0">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+                                <Label Grid.Row="0"
+                                           Grid.Column="2"
+                                           FontSize="8.5"
+                                           VerticalOptions="Center"
+                                           TextColor="#A4A4A4"
+                                       Margin="0,0,5,0"
+                                           Text="{Binding Date}" >
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+
+                                <Label Grid.Row="1"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="16"
+                                           TextColor="#282828"
+                                           Margin="0,13,0,0"
+                                           Text="{Binding Heading}" >
+
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+
+                                <!--
+                                <ffSvg:SvgCachedImage 
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                        Source="star.svg"
+                                        Margin="0,12,0,0"
+                                        HeightRequest="20"
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center">
+
+                                </ffSvg:SvgCachedImage>
+                                -->
+
+                                <Label Grid.Row="2"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="13"
+                                           TextColor="#8B8B8B" LineHeight="1.1"
+                                           Text="{Binding Para}" 
+                                           Margin="0,0,0,0">
+
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <!--<On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                            <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+
+                                </Label>
+
+                                    <Grid Grid.Row="3" Grid.ColumnSpan="3" Margin="0,10,0,0">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ListView_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                        </Grid.GestureRecognizers>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <!--<Image 
+                                               VerticalOptions="Center" Source="chat.png" HeightRequest="13" Grid.Column="0"></Image>-->
+                                        <ffSvg:SvgCachedImage 
+                                            Grid.Column="0"
+                                            Source="chatIcon.svg"
+                                            HeightRequest="14"
+                                            VerticalOptions="Center">
+
+                                        </ffSvg:SvgCachedImage>
+                                        <Label Grid.Column="1"
+                                               Margin="0,-5,0,0"
+                                               VerticalOptions="Center"
+                                               FontSize="12"
+                                               TextColor="#8B8B8B"
+                                               Text="{Binding CommentsNo}" >
+
+                                        </Label>
+                                    </Grid>
+
+                                    <!--<BoxView HeightRequest="1" VerticalOptions="End" Color="#E3E3E5" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"></BoxView>-->
+                            </Grid>
+                            
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="ListView_Tapped" NumberOfTapsRequired="1"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
