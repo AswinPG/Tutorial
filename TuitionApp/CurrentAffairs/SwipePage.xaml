@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
+             x:Class="TuitionApp.CurrentAffairs.SwipePage">
+    <NavigationPage.TitleView>
+        <Grid Margin="0,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ffSvg:SvgCachedImage HeightRequest="30" Grid.Column="0"
+                                      Source="backGrad1.svg" Margin="0,0,15,0"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Back" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
+                                      Source="logo.svg" Grid.Column="1"
+                                      />
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
+                                      Source="noti.svg" Grid.Column="2"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <AbsoluteLayout Padding="0">
+            <Frame
+                x:Name="LowFrame"
+                AbsoluteLayout.LayoutBounds="0,.994,1,.01"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand" />
+            <Frame
+                x:Name="MidFrame"
+                AbsoluteLayout.LayoutBounds="0,.978,1,.01"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand" />
+            <Frame
+                AbsoluteLayout.LayoutBounds="0,0,1,.965"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label
+                        Margin="0"
+                        FontSize="14"
+                        HorizontalTextAlignment="Center"
+                        LineHeight="1.1"
+                        Text="Loading.."
+                        TextColor="#fzfzfz">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                <!--<On Platform="Android" Value="Barlow-Bold.ttf#Barlow-Bold" />-->
+                                <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                            </OnPlatform>
+                        </Label.FontFamily>
+
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <Frame
+                x:Name="MainFrame"
+                Padding="0"
+                AbsoluteLayout.LayoutBounds="0,0,1,.965"
+                AbsoluteLayout.LayoutFlags="All"
+                HasShadow="False"
+                HorizontalOptions="FillAndExpand">
+                <Frame.GestureRecognizers>
+                    <SwipeGestureRecognizer Direction="Up" Swiped="Swiped_Up" />
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Frame Padding="0" BackgroundColor="Transparent">
+                        <Image Source="Pic.png" />
+                    </Frame>
+
+                    <StackLayout Margin="15,15,15,0" VerticalOptions="StartAndExpand">
+                        <Label
+                            Margin="0"
+                            FontSize="10"
+                            Text="1/15"
+                            TextColor="#6518E7">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                    <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                    <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                </OnPlatform>
+                            </Label.FontFamily>
+
+                        </Label>
+                        <Label
+                            Margin="0"
+                            FontSize="16"
+                            LineHeight="1.1"
+                            Text="Indian space program closes out year with launch of upgraded GSLV"
+                            TextColor="#6518E7">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                    <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                    <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                </OnPlatform>
+                            </Label.FontFamily>
+
+                        </Label>
+                        <Label
+                            Margin="0"
+                            FontSize="12"
+                            LineHeight="1.15"
+                            Text="GSLV-F11 successfully launched GSAT-7A, ISRO's 39th communication satellite, on December 19, 2018 at 1610 hrs (IST) from the Second Launch Pad (SLP) of Satish Dhawan Space Centre SHAR, Sriharikota. "
+                            TextColor="#000000">
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+                                    <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                    <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                    <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                </OnPlatform>
+                            </Label.FontFamily>
+
+                        </Label>
+                        <StackLayout Margin="0,10,0,0" Orientation="Horizontal">
+                            <Label
+                                Margin="0"
+                                FontSize="11"
+                                Text="December 20, 2018"
+                                TextColor="#000000">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                        <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                        <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                    </OnPlatform>
+                                </Label.FontFamily>
+
+                            </Label>
+                            <Label
+                                Margin="0"
+                                FontSize="11"
+                                Text="See full news"
+                                TextColor="#0341CE">
+                                <Label.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="iOS" Value="MarkerFelt-Thin" />
+                                        <!--<On Platform="Android" Value="Barlow-Regular.ttf#Barlow-Regular" />-->
+                                        <!--<On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />-->
+                                    </OnPlatform>
+                                </Label.FontFamily>
+
+                            </Label>
+                        </StackLayout>
+                    </StackLayout>
+
+
+                    <ffSvg:SvgCachedImage
+                        Margin="25,25,25,15"
+                        HeightRequest="12.5"
+                        HorizontalOptions="CenterAndExpand"
+                        Source="CASwipeUp.svg"
+                        VerticalOptions="EndAndExpand" />
+
+                </StackLayout>
+
+
+
+            </Frame>
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

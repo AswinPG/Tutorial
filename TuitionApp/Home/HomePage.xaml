@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             mc:Ignorable="d"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
+             x:Class="TuitionApp.Home.HomePage">
+    <NavigationPage.TitleView>
+        <Grid Margin="15">
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="Start"
+                                      Source="logo.svg" Grid.Column="0"
+                                      />
+            <ffSvg:SvgCachedImage HeightRequest="30" HorizontalOptions="End"
+                                      Source="noti.svg" Grid.Column="1"
+                                      >
+                <ffSvg:SvgCachedImage.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Notification" />
+                </ffSvg:SvgCachedImage.GestureRecognizers>
+            </ffSvg:SvgCachedImage>
+            
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="15,20,15,0">
+                <ffSvg:SvgCachedImage Source="cur.svg">
+                    <ffSvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="CA_Tapped" />
+                    </ffSvg:SvgCachedImage.GestureRecognizers>
+                </ffSvg:SvgCachedImage>
+                <Grid Margin="0,10,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <ffSvg:SvgCachedImage Source="phyTab.svg" Grid.Column="0" Grid.Row="0" Margin="0,7,7,0">
+                        <ffSvg:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SubjectTapped" />
+                        </ffSvg:SvgCachedImage.GestureRecognizers>
+                    </ffSvg:SvgCachedImage>
+                    <ffSvg:SvgCachedImage Source="cheTab.svg" Grid.Column="1" Grid.Row="0" Margin="7,7,0,0"/>
+                    <ffSvg:SvgCachedImage Source="geoTab.svg" Grid.Column="0" Grid.Row="1" Margin="0,7,7,0"/>
+                    <ffSvg:SvgCachedImage Source="hisTab.svg" Grid.Column="1" Grid.Row="1" Margin="7,7,0,0"/>
+                    <ffSvg:SvgCachedImage Source="malTab.svg" Grid.Column="0" Grid.Row="2" Margin="0,7,7,0"/>
+                    <ffSvg:SvgCachedImage Source="engTab.svg" Grid.Column="1" Grid.Row="2" Margin="7,7,0,0"/>
+                    <ffSvg:SvgCachedImage Source="hinTab.svg" Grid.Column="0" Grid.Row="3" Margin="0,7,7,0"/>
+                    <ffSvg:SvgCachedImage Source="sanTab.svg" Grid.Column="1" Grid.Row="3" Margin="7,7,0,0"/>
+                    <ffSvg:SvgCachedImage Source="bioTab.svg" Grid.Column="0" Grid.Row="4" Margin="7,7,0,0"/>
+                    <ffSvg:SvgCachedImage Source="matTab.svg" Grid.Column="1" Grid.Row="4" Margin="7,7,0,0"/>
+
+
+                </Grid>
+
+                <ffSvg:SvgCachedImage Source="forum.svg">
+                    <ffSvg:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Forum_Tapped" />
+                    </ffSvg:SvgCachedImage.GestureRecognizers>
+                </ffSvg:SvgCachedImage>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
